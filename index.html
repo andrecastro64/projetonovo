@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Botão Redondo com Movimento Aleatório CSS e JavaScript</title>
+<style>
+    /* Estilo base do botão */
+    .botao {
+        top: 430px;
+        left: 57%;
+        transform: translate(-50%, -50%);
+        width: 150px;
+        height: 80px;
+        border-radius: 10%; /* Torna o botão redondo */
+        background-color: rgb(250, 51, 51);
+        position: relative;
+        transition: all 0.3s ease; /* Transição suave para o movimento */
+    }
+
+    .botao1 {
+        top: 310px;
+        left: 42%;
+        width: 150px;
+        height: 80px;
+        border-radius: 10%; /* Torna o botão redondo */
+        background-color: rgb(6, 233, 18);
+        position: relative;}
+
+    /* Estilo do texto dentro do botão */
+    .botao span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 18px;
+    }
+
+    .botao1 span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 18px;
+        
+    }
+
+
+    .imagem {
+        position: absolute;
+        top: -10px;
+        left: 42%;
+        width: 450px;
+        height: 350px;
+
+
+    }
+
+
+
+
+    
+</style>
+</head>
+<body>
+
+<!-- Botão redondo com texto -->
+<div class="botao" onmouseover="moveBotao()">
+    <span>Não</span>
+</div>
+
+<div class="botao1">
+    <span><a href="pagina1.html" target="">Sim</a></span>
+</div>
+
+
+    <p><img src="imagem.jpg" alt="q" class="imagem"></p>
+
+<script>
+function moveBotao() {
+    var botao = document.querySelector('.botao');
+    var newX = Math.random() * (window.innerWidth - 100); // Nova posição X aleatória
+    var newY = Math.random() * (window.innerHeight - 100); // Nova posição Y aleatória
+
+    botao.style.left = newX + 'px';
+    botao.style.top = newY + 'px';
+}
+</script>
+
+</body>
+</html>
